@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "start": "concurrently \"npm run dev --prefix foodi-client\" \"npm start --prefix foodi-server\""
+  }
+}
