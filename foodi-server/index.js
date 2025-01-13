@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 //mongodb configuration
-mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@foodi-client.98tqmqu.mongodb.net/foodi-db?retryWrites=true&w=majority&appName=foodi-client`)
+mongoose.connect(`mongodb://localhost:27017/`)
     .then(
         console.log("MongoDB connected Successfully")
     )
@@ -36,6 +36,5 @@ const userRoutes = require('./api/routes/userRoutes')
 app.use('/menu', menuRoutes)
 app.use('/carts', cartRoutes)
 app.use('/users', userRoutes)
-//dummy code
-app.get('/', (req, res) => res.send('Hello Client server'))
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+app.listen(port, () => console.log(`App listening on port ${port}!`))
